@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
 	cors({
-		origin: ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:8080', env.ORIGIN],
+		origin: ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:8080', 'https://4mncn7wx-5173.use2.devtunnels.ms/', env.ORIGIN],
 		credentials: true,
 		methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
 	}),
