@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
 	cors({
-		origin: ['http://localhost:5173/', 'http://localhost:3000', 'http://localhost:8080', 'http://localhost:4173', env.ORIGIN],
+		origin: ['https://merch-pos-frontend.vercel.app/', 'https://merch-pos-api-dev-tzmz.4.us-1.fl0.io',],
 		credentials: true,
 		methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
 	}),
