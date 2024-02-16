@@ -8,7 +8,7 @@ export const deserialize = async (
 	next: NextFunction,
 ) => {
 	try {
-		const token: string = req.cookies.token;
+		const token: string = req.headers.authorization?.split(' ')[1] || '';
 		const decoded = verifyToken(token);
 		if (decoded) {
 			const user = await usersService.findOne({ _id: decoded.id });

@@ -28,16 +28,16 @@ const loginHandler = async (
 
 		res
 			.status(200)
-			.cookie('token', token, {
-				httpOnly: true,
-				secure: env.NODE_ENV === 'production',
-				sameSite: env.NODE_ENV === 'production' ? 'none' : 'strict',
-				expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 3),
-			})
+			// .cookie('token', token, {
+			// 	httpOnly: true,
+			// 	secure: env.NODE_ENV === 'production',
+			// 	sameSite: env.NODE_ENV === 'production' ? 'none' : 'strict',
+			// 	expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 3),
+			// })
 			.json({
 				success: true,
 				message: 'User logged in successfully',
-				data: user,
+				data: { token, user},
 			});
 	} catch (error) {
 		next(error);
